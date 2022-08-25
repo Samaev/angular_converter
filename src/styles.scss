@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  background-color: lightgray;
+  height: 100%;
+ }
+
+body {
+  margin: 0;
+  background-image:url("./images/World-Download-PNG.png");
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+

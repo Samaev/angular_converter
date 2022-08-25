@@ -1,0 +1,11 @@
+<div
+  *ngIf="errorService.error$ | async as error"
+>
+  {{ errorService.error$ | async}}
+
+
+<H1>BANK IS NOT ONLINE!</H1>
+<button
+  (click)="errorService.clear()"
+>X</button>
+</div>
