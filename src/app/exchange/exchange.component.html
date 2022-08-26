@@ -1,41 +1,42 @@
 <fieldset class="container notification">
   <div class="example-container">
-    <h5>Choose the amount</h5>
-  <input
-    type="number"
-    value={{firstInput}}
-    (input)="getInputDirect($event)"
-    class="input"
-  >
-  <div class="select">
-    <select (change)="selectDirectMultiplier($event)" ng-click="abc(secondInput)">
-      <option *ngFor="let tax of taxes" class="dropdown-item">{{tax.txt}}</option>
-    </select>
-  </div>
-  <br>
-  <input
-    type="number"
-    value={{secondInput}}
-    (input)="getInputBack($event)"
-    class="input"
-  >
+      <h5>Choose the amount</h5>
+    <input
+      type="number"
+      value={{firstInput}}
+      (input)="getInputDirect($event)"
+      class="input"
+    >
+    <div class="select">
+      <select (change)="selectDirectMultiplier($event)" ng-click="abc(secondInput)">
+        <option *ngFor="let tax of taxes" class="dropdown-item">{{tax.txt}}</option>
+      </select>
+    </div>
+    <br>
+    <input
+      type="number"
+      value={{secondInput}}
+      (input)="getInputBack($event)"
+      class="input"
+    >
 
-  <div class="select">
-    <select (change)="selectBackMultiplier($event)">
-      <option *ngFor="let tax of taxes">{{tax.txt}}</option>
-    </select>
-  </div>
+    <div class="select">
+      <select (change)="selectBackMultiplier($event)">
+        <option *ngFor="let tax of taxes">{{tax.txt}}</option>
+      </select>
+    </div>
 
-<button
-  class="button"
-  (click)="showList = !showList"
->
-  List of all Exchange Values
-</button>
-
-<ol   *ngIf="showList">
-  <li *ngFor="let tax of taxes">{{tax?.txt}} - {{tax?.rate | currency: 'UAH '}}</li>
-</ol>
+    <button
+      class="button"
+      (click)="showList = !showList"
+    >
+      List of all Exchange Values
+    </button>
+    <div class="list">
+      <ol   *ngIf="showList" >
+        <li *ngFor="let tax of taxes">{{tax?.txt}} - {{tax?.rate | currency: 'UAH '}}</li>
+      </ol>
+    </div>
   </div>
 
 </fieldset>
