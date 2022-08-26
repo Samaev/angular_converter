@@ -16,7 +16,7 @@ export class RatesService {
   }
 
   getAll(): Observable<Tax[]> {
-    return this.http.get<Tax[]>('https://1bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json').pipe(
+    return this.http.get<Tax[]>('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json').pipe(
       delay(1000),
       retry(2),
       catchError(this.errorHandler.bind(this)
