@@ -1,11 +1,17 @@
 <div
+  class="notification is-danger error-box"
   *ngIf="errorService.error$ | async as error"
 >
   {{ errorService.error$ | async}}
 
 
-<H1>BANK IS NOT ONLINE!</H1>
-<button
-  (click)="errorService.clear()"
->X</button>
+  <H1>BANK IS NOT ONLINE!</H1>
+  <p>You can ask for help by <a href="mailto:andreysamaev">mail to Support Service</a></p>
+  <p>or connest via <a href="tel:+380500222777">phone to Head of CallCenter</a></p>
+  <button
+    (click)="errorService.clear()"
+    class="button is-small"
+  >
+    CLOSE
+  </button>
 </div>
