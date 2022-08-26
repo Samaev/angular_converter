@@ -26,8 +26,14 @@
     </select>
   </div>
 
-<h2>List of all Exchange Values</h2>
-<ol>
+<button
+  class="button"
+  (click)="showList = !showList"
+>
+  List of all Exchange Values
+</button>
+
+<ol   *ngIf="showList">
   <li *ngFor="let tax of taxes">{{tax?.txt}} - {{tax?.rate | currency: 'UAH '}}</li>
 </ol>
   </div>

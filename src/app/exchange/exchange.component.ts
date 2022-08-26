@@ -14,6 +14,7 @@ export class ExchangeComponent implements OnInit {
   public secondInput = 1;
   public multiplier1 = 25.49;
   public multiplier2 = 25.49;
+  public showList = false;
 
   getInputDirect(event: any) {
     this.firstInput = event.target.value;
