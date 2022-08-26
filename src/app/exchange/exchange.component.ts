@@ -17,12 +17,12 @@ export class ExchangeComponent implements OnInit {
   public showList = false;
 
   getInputDirect(event: any) {
-    this.firstInput = event.target.value;
+    this.firstInput = event.target.value.toFixed(2);
     this.secondInput = +(event.target.value * this.multiplier1 / this.multiplier2).toFixed(2)
   }
 
   getInputBack(event: any) {
-    this.secondInput = event.target.value;
+    this.secondInput = event.target.value.toFixed(2);
     this.firstInput = +(event.target.value * this.multiplier2 / this.multiplier1).toFixed(2)
   }
 
@@ -30,8 +30,7 @@ export class ExchangeComponent implements OnInit {
     this.taxes.map(tax=>{
       if (event.target.value === tax.txt) {
         this.multiplier1 = tax.rate;
-        this.secondInput = (this.firstInput * tax.rate / this.multiplier2)
-        console.log(this.secondInput)
+        this.secondInput = +(this.firstInput * tax.rate / this.multiplier2).toFixed(2)
       }
     })
   }
@@ -40,8 +39,7 @@ export class ExchangeComponent implements OnInit {
     this.taxes.map(tax=>{
       if (event.target.value === tax.txt) {
         this.multiplier2 = tax.rate;
-        this.firstInput = (this.secondInput * tax.rate / this.multiplier1)
-        console.log(this.firstInput)
+        this.firstInput = +(this.secondInput * tax.rate / this.multiplier1).toFixed(2)
 
       }
     })
