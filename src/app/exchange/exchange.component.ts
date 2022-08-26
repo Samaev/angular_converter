@@ -17,12 +17,12 @@ export class ExchangeComponent implements OnInit {
   public showList = false;
 
   getInputDirect(event: any) {
-    this.firstInput = event.target.value.toFixed(2);
+    this.firstInput = event.target.value;
     this.secondInput = +(event.target.value * this.multiplier1 / this.multiplier2).toFixed(2)
   }
 
   getInputBack(event: any) {
-    this.secondInput = event.target.value.toFixed(2);
+    this.secondInput = event.target.value;
     this.firstInput = +(event.target.value * this.multiplier2 / this.multiplier1).toFixed(2)
   }
 
